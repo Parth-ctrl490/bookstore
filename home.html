@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psit book store</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+    }
+
+    table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table tr {
+        border: 1px solid #ddd;
+    }
+
+    table th, table td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Header Styling */
+    tr:first-child {
+        background-color: chocolate;
+        color: white;
+        font-size: 18px;
+    }
+
+    tr:first-child td {
+        font-weight: bold;
+    }
+
+    .logo img {
+        height: 100px;
+        width: 150px;
+    }
+
+    /* Navigation Row Styling */
+    tr:nth-child(2) {
+        background-color: blanchedalmond;
+        font-weight: bold;
+    }
+
+    tr:nth-child(2) a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+
+    tr:nth-child(2) a:hover {
+        color: chocolate;
+    }
+
+    /* Section Links Styling */
+    tr td a {
+        text-decoration: none;
+        color: #555;
+        font-size: 15px;
+        transition: color 0.3s ease;
+    }
+
+    tr td a:hover {
+        color: chocolate;
+    }
+
+    /* Centered Content */
+    .welcome-text {
+        font-size: 16px;
+        color: #333;
+        font-style: italic;
+    }
+</style>
+</head>
+<body>
+<table>
+    <!-- Header Row -->
+    <tr>
+        <td class="logo">
+            <center><img src="psit.png" alt="Bookstore Logo"></center>
+        </td>
+        <td colspan="4">
+            <center>PSIT Bookstore</center>
+        </td>
+    </tr>
+
+    <!-- Navigation Row -->
+    <tr>
+        <td><center><a href="home.html">Home</a></center></td>
+        <td><center><a href="login.html">Login</a></center></td>
+        <td><center><a href="registration.html">Registration</a></center></td>
+        <td><center><a href="catalogue.html">Catalogue</a></center></td>
+        <td><center><a href="cart.html">Cart</a></center></td>
+    </tr>
+
+    <!-- Department Links -->
+    <tr>
+        <td><a href="cse.html">CSE</a></td>
+        <td colspan="4" class="welcome-text">
+            <center>
+                <strong>Welcome to PSIT Bookstore</strong><br>
+                <em>
+                    Our Engineering Bookstore offers a wide range of textbooks, reference materials,
+                     and guides across all engineering fields. From academic essentials to the latest industry publications,
+                      we support students and professionals alike. 
+                      Explore resources to fuel your innovation and career growth! - project by Parth Shukla</em>
+            </center>
+        </td>
+    </tr>
+    
+    <tr>
+        <td><a href="ece.html">ECE</a></td>
+    </tr>
+    <tr>
+        <td><a href="eee.html">EEE</a></td>
+    </tr>
+    <tr>
+        <td><a href="civil.html">CIVIL</a></td>
+    </tr>
+</table>
+</body>
+</html>
