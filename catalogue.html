@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue Page</title>
+</head>
+<body>
+<table border="1" width="80%" cellpadding="10" cellspacing="0" align="center">
+<tr style="background-color: chocolate; color: white;">
+<td><img src="psit.png" height="100px" width="150px"></td>
+<td colspan="4"><b><center>PSIT Bookstore</center></b></td>
+</tr>
+<tr style="background-color: blanchedalmond;">
+<td><a href="home.html">Home</a></td>
+<td><a href="login.html">Login</a></td>
+<td><a href="registration.html">Registration</a></td>
+<td><a href="catalogue.html">Catalogue</a></td>
+<td><a href="cart.html">Cart</a></td>
+</tr>
+<tr>
+<td colspan="5">
+<h2 align="center">Catalogue of Books</h2>
+<table border="1" width="100%" cellpadding="10" cellspacing="0">
+<tr>
+ 
+<th>Cover</th><th>Book Name</th>
+<th>Author</th>
+<th>Publisher</th>
+<th>Price</th>
+<th>Action</th>
+</tr>
+<!-- Book 1 -->
+<tr>
+<td><img src="https://m.media-amazon.com/images/I/61dpLaOyAAL.SY522.jpg" alt="XML Bible" width="150" height="200"></td>
+<td>XML Bible</td>
+<td>Winston</td>
+<td>Wiley</td>
+<td>$40.5</td>
+<td><button onclick="addToCart('XML Bible')">Add to Cart</button></td>
+</tr>
+<!-- Book 2 -->
+<tr>
+<td><img src="https://m.media-amazon.com/images/I/81CDIGTNNFL.SY522.jpg" alt="AI Book" width="150" height="200"></td>
+<td>AI</td>
+<td>S. Russell</td>
+<td>Princeton Hall</td>
+<td>$63</td>
+<td><button onclick="addToCart('AI')">Add to Cart</button></td>
+</tr>
+<!-- Book 3 -->
+<tr>
+<td><img src="https://m.media-amazon.com/images/I/51jfWc-0-PL.SY445_SX342.jpg" alt="Java 2" width="150" height="200"></td>
+<td>Java 2</td>
+ 
+<td>Watson</td><td>BPB Publications</td>
+<td>$35.5</td>
+<td><button onclick="addToCart('Java 2')">Add to Cart</button></td>
+</tr>
+<!-- Book 4 -->
+<tr>
+<td><img src="https://m.media-amazon.com/images/I/51JKFOPk-NL.SY522.jpg" alt="HTML in 24 hours" width="150" height="200"></td>
+<td>HTML in 24 Hours</td>
+<td>Sam Peter</td>
+<td>Sam Publications</td>
+<td>$50</td>
+<td><button onclick="addToCart('HTML in 24 Hours')">Add to Cart</button></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr style="border: 0px;">
+<td colspan="5" style="text-align:center; padding-top:20px;">
+<hr>
+<p>© 2024C All rights reserved.</p>
+</td>
+</tr>
+</table>
+<script>
+function addToCart(bookName) {
+alert(bookName + " has been added to your cart!");
+}
+</script>
+</body>
+</html>
