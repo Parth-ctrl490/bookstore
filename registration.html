@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: chocolate;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 80px;
+            vertical-align: middle;
+        }
+
+        header h1 {
+            display: inline-block;
+            margin: 0 10px;
+            vertical-align: middle;
+            font-size: 24px;
+        }
+
+        nav {
+            background-color: #e6f2ff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0073e6;
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #0073e6;
+            color: white;
+        }
+
+        /* Form Container Styling */
+        .form-container {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-container h3 {
+            text-align: center;
+            color: #0073e6;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+            vertical-align: middle;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            width: auto;
+            padding: 10px 20px;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #005bb5;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            input, select, textarea {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="psit.png" alt="Bookstore Logo">
+        <h1>PSIT Bookstore</h1>
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="registration.html">Registration</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+    <div class="form-container">
+        <h3>Registration Form</h3>
+        <form name="regform" method="post" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td><label for="name">Name</label></td>
+                    <td>
+                        <input type="text" id="name" name="name" required>
+                        <div id="nameError" class="error"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password</label></td>
+                    <td>
+                        <input type="password" id="password" name="password" required>
+                        <div id="passwordError" class="error"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="phno">Phone Number</label></td>
+                    <td>
+                        <input type="text" id="phno" name="phno" maxlength="10" required>
+                        <div id="phoneError" class="error"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">E-mail</label></td>
+                    <td>
+                        <input type="email" id="email" name="email" required>
+                        <div id="emailError" class="error"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <label><input type="radio" name="gender" value="male" > Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td>
+                        <select id="day" name="day" required>
+                            <option value="" disabled selected>Day</option>
+                            <script>
+                                for (let i = 1; i <= 31; i++) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                        <select id="month" name="month" required>
+                            <option value="" disabled selected>Month</option>
+                            <option value="jan">January</option>
+                            <option value="feb">February</option>
+                            <option value="mar">March</option>
+                            <option value="apr">April</option>
+                            <option value="may">May</option>
+                            <option value="jun">June</option>
+                            <option value="jul">July</option>
+                            <option value="aug">August</option>
+                            <option value="sep">September</option>
+                            <option value="oct">October</option>
+                            <option value="nov">November</option>
+                            <option value="dec">December</option>
+                        </select>
+                        <select id="year" name="year" required>
+                            <option value="" disabled selected>Year</option>
+                            <script>
+                                for (let i = 1990; i <= new Date().getFullYear(); i++) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Languages Known</td>
+                    <td>
+                        <label><input type="checkbox" name="language" value="telugu"> Telugu</label><br>
+                        <label><input type="checkbox" name="language" value="english"> English</label><br>
+                        <label><input type="checkbox" name="language" value="hindi"> Hindi</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address</label></td>
+                    <td><textarea id="address" name="address" rows="3" required></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            const name = document.getElementById('name').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const phone = document.getElementById('phno').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            const nameError = document.getElementById('nameError');
+            const passwordError = document.getElementById('passwordError');
+            const phoneError = document.getElementById('phoneError');
+            const emailError = document.getElementById('emailError');
+
+            nameError.textContent = '';
+            passwordError.textContent = '';
+            phoneError.textContent = '';
+            emailError.textContent = '';
+
+            if (!/^[a-zA-Z\s]{6,}$/.test(name)) {
+                nameError.textContent = 'Name must contain at least 6 characters and only letters or spaces.';
+                isValid = false;
+            }
+
+            if (password.length < 6) {
+                passwordError.textContent = 'Password must be at least 6 characters long.';
+                isValid = false;
+            }
+
+            if (!/^[0-9]{10}$/.test(phone)) {
+                phoneError.textContent = 'Phone number must contain exactly 10 digits.';
+                isValid = false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                emailError.textContent = 'Enter a valid email address (e.g., name@domain.com).';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>
